@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekiden — Media Tracking for macOS</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #f5f5f7;
+            --card: #ffffff;
+            --text: #1d1d1f;
+            --secondary: #86868b;
+            --accent: #0071e3;
+            --border: #d2d2d7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1d1d1f;
+                --card: #2d2d2f;
+                --text: #f5f5f7;
+                --secondary: #98989d;
+                --accent: #2997ff;
+                --border: #424245;
+            }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 120px 24px 80px;
+        }
+        .hero-icon {
+            width: 128px;
+            height: 128px;
+            border-radius: 28px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            margin-bottom: 32px;
+        }
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .hero .tagline {
+            font-size: 24px;
+            color: var(--secondary);
+            font-weight: 400;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+        .hero .download-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 14px 36px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.15s;
+        }
+        .hero .download-btn:hover { opacity: 0.88; }
+
+        /* Features */
+        .features {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 48px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .feature-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+        .feature-card .icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .feature-card p {
+            color: var(--secondary);
+            font-size: 16px;
+        }
+
+        /* Screenshot */
+        .screenshot {
+            max-width: 980px;
+            margin: 0 auto 80px;
+            padding: 0 24px;
+            text-align: center;
+        }
+        .screenshot img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            color: var(--secondary);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+        }
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        footer a:hover { text-decoration: underline; }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero { padding: 60px 24px 40px; }
+            .hero h1 { font-size: 36px; }
+            .hero .tagline { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <img class="hero-icon" src="icon.png" alt="Ekiden icon" onerror="this.style.display='none'">
+        <h1>Ekiden</h1>
+        <p class="tagline">Track your books, movies, and shows. Beautifully. Natively on macOS.</p>
+        <a class="download-btn" href="#download">Coming Soon</a>
+    </section>
+
+    <section class="features">
+        <h2>Everything you need, nothing you don't.</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon">📚</div>
+                <h3>Any Media Type</h3>
+                <p>Books, movies, TV shows, podcasts — or create your own custom types with unique icons and progress tracking.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>Progress Tracking</h3>
+                <p>Track pages, chapters, episodes, minutes, or percentage. Switch between list and grid views as you prefer.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🏷️</div>
+                <h3>Tags & Notes</h3>
+                <p>Organize with tags, timestamp your thoughts with inline notes. Filter, sort, and find anything instantly.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🖼️</div>
+                <h3>Cover Art</h3>
+                <p>Drag in cover images for every item. Beautiful grid cards with frosted status badges and smooth animations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h3>Private by Design</h3>
+                <p>Your library lives on your Mac. No accounts, no cloud, no tracking. Export and import for backup.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🍎</div>
+                <h3>Native macOS</h3>
+                <p>Built with SwiftUI and SwiftData. Sidebar, inspector, keyboard shortcuts, Dark Mode — it all just works.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Ekiden is made by <a href="https://github.com/maxalthoff">Max Althoff</a>.</p>
+        <p style="margin-top:4px"><a href="https://github.com/ekiden-app">GitHub</a> · macOS 26+</p>
+    </footer>
+
+</body>
+</html>
